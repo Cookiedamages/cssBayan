@@ -1,0 +1,40 @@
+html {
+    background-color: black;
+    color: azure;    
+}
+
+.bayan {
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    flex-direction: column;
+}
+
+.wrapper {
+    width: 60vw;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.memeHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+#memeImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#memeImg  img{
+    width: 50%;
+
+}
+
+
+/****** MEDIA QUARIES ******/
+
+@media screen {
+    
+}
