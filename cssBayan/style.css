@@ -22,56 +22,119 @@ html {
     margin: 0 auto;
 }
 
-summary {
-    display: flex;
-    justify-content: space-between;
+.memePhoto {
 
-    cursor: pointer;
-}
-
-summary h2 {
     display: flex;
-    flex-direction: column;
     justify-content: center;
 }
 
-.memeContent {
-    display: block;
-    margin: 0.5em auto;
-    width: 90%;
+input {
+    display: none;
+}
+
+label {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .plusIcon {
     width: 10%;
     height: 10%;
-    margin: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-details img {
-    height: 0%;
-}
-
 
 /* ANIMATIONS */
 
-details:hover .memeContent {
-    opacity: 1;
-    max-height: 100%;
-    transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
+.meme .memePhoto img {
+    max-height: 0;
+    overflow: hidden;
+    transition: 1s ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem;
+}
+
+.meme input:checked ~ label {
+    color:#0499ff;
+}
+
+.meme input:hover ~ label {
+    color:#0499ff;
+}
+
+.meme input:checked ~ .memePhoto img {
+    max-height: 500px;
+    max-width: 500px;
+    transition: 1s ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem;
+}
+
+.meme input:checked ~ label .plusIcon  {
+    transition: 0.5s;
+    transform: rotate(45deg);
+}
+
+label .plusIcon {
+    transition: 0.5s;
+}
+
+/* MEDIA QUERIES */
+
+/* MOBILE */
+@media only screen and (max-width: 767px) {
+    .wrapper {
+        width: 100%;
+    }
+    h1 {
+        margin-bottom: 0.5rem;
+    }
+    h2 {
+        font-size: 1rem;
+    }
+    .bayan {
+        margin: 1rem        
+    }
+
   }
-
-details:hover .plusIcon {
-    transition: 0.5s;
-    rotate: 45deg;
-}
-
-details .plusIcon {
-    transition: 0.5s;
-}
-
-
-/****** MEDIA QUARIES ******/
-
-@media screen {
-    
-}
+  
+  /* TABLET */
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .wrapper {
+        width: 80%;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+  }
+  
+  /* DESKTOP */
+  @media only screen and (min-width: 1024px) {
+    .wrapper {
+        width: 60%;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+  }
